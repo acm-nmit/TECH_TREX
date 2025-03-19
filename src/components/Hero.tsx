@@ -53,7 +53,7 @@ const Hero = () => {
           TECH<span className="text-tech-green">-TREX</span>
         </h1>
         <p className="text-xl md:text-2xl text-white/70 mb-8 max-w-3xl mx-auto opacity-0" ref={subtitleRef}>
-          Unleash your technical prowess in a three-round challenge at Anaadyanta 2023
+          Unleash your technical prowess in a three-round challenge at Anaadyanta 2025
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0" ref={ctaRef}>
