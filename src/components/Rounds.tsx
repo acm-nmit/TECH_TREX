@@ -27,15 +27,14 @@ const Rounds = () => {
   const rounds = [
     {
       number: "01",
-      title: "Technical Quiz",
+      title: "Dot-Dash Decipher",
       icon: <Lightbulb size={28} className="text-tech-green" />,
-      description: "A rapid-fire quiz testing your knowledge across various technical domains.",
+      description: "Teams race against time to decode hidden messages.",
       rules: [
-        "Teams of 2-3 members",
-        "Multiple choice and rapid answer questions",
-        "Topics include programming, technology trends, computer science fundamentals",
-        "Top performing teams advance to Round 2",
-        "Time limit: 30 minutes"
+        "Each team will receive a set of encoded Morse code sequences.",
+        "Teams must use the provided reference list to decode the word.",
+        "Answers must be submitted within the time limit; late submissions wont be considered.",
+        "The top teams with the fastest and most accurate answers will proceed to the next round."
       ]
     },
     {
