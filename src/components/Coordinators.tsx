@@ -5,13 +5,13 @@ import { User, Phone } from 'lucide-react';
 const Coordinators = () => {
   const coordinators = [
     {
-      name: "John Doe",
-      phone: "+91 9876543210",
+      name: "Kaushik P",
+      phone: "+91 7625067221",
       role: "Event Coordinator"
     },
     {
-      name: "Jane Smith",
-      phone: "+91 9876543211",
+      name: "Disha R",
+      phone: "+91 7795675617",
       role: "Event Coordinator"
     }
   ];
