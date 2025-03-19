@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, FileText } from 'lucide-react';
 
 const Hero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -60,8 +60,9 @@ const Hero = () => {
           <a href="#rounds" className="btn-primary">
             Explore Rounds
           </a>
-          <a href="#about" className="btn-outline">
-            Learn More
+          <a href="#" className="btn-outline flex items-center gap-2">
+            <FileText size={18} />
+            Download Brochure
           </a>
         </div>
       </div>
