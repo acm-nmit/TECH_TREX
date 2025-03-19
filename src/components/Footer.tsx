@@ -61,13 +61,13 @@ const Footer = () => {
               Have questions about TECH-TREX? Reach out to us through social media or email.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="p-2 text-white hover:text-tech-green transition-colors" aria-label="GitHub">
+              <a href="https://github.com/acm-nmit" className="p-2 text-white hover:text-tech-green transition-colors" aria-label="GitHub">
                 <Github size={20} />
               </a>
-              <a href="#" className="p-2 text-white hover:text-tech-green transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/acm_nmit?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="p-2 text-white hover:text-tech-green transition-colors" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="p-2 text-white hover:text-tech-green transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/acm-nmit/" className="p-2 text-white hover:text-tech-green transition-colors" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
               <a href="#" className="p-2 text-white hover:text-tech-green transition-colors" aria-label="Email">
