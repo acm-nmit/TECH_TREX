@@ -1,70 +1,86 @@
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { Clock, Calendar, Sparkles } from 'lucide-react';
 
-const Countdown = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 15,
-    hours: 10,
-    minutes: 10,
-    seconds: 40
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
+const CountdownTimer = () => {
+  // Set the event date (April 4th, 2025)
+  const eventDate = new Date("2025-04-04T00:00:00").getTime();
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
   });
 
-  const calculateTimeLeft = () => {
-    const targetDate = new Date('April 4, 2024 00:00:00').getTime();
-    const now = new Date().getTime();
-    const difference = targetDate - now;
-    
-    if (difference > 0) {
-      setTimeLeft({
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((difference % (1000 * 60)) / 1000)
-      });
-    } else {
-      // If the date has passed
-      setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-    }
-  };
-
   useEffect(() => {
-    // Calculate immediately on mount
+    const calculateTimeLeft = () => {
+      const now = new Date().getTime();
+      const difference = eventDate - now;
+      
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60)
+        });
+      } else {
+        // Event has started/passed
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
+    };
+
     calculateTimeLeft();
-    
-    // Set up the interval
     const timer = setInterval(calculateTimeLeft, 1000);
     
-    // Clean up the interval on component unmount
     return () => clearInterval(timer);
-  }, []);
-
-  const timeBlocks = [
-    { label: 'Days', value: timeLeft.days },
-    { label: 'Hours', value: timeLeft.hours },
-    { label: 'Minutes', value: timeLeft.minutes },
-    { label: 'Seconds', value: timeLeft.seconds }
-  ];
+  }, [eventDate]);
 
   return (
-    <div className="glass-card p-6 lg:p-8 max-w-3xl mx-auto">
-      <h3 className="text-center text-white text-xl md:text-2xl font-bold mb-6">
-        Event Starts In
-      </h3>
+    <div className="w-full max-w-3xl mx-auto glass-card rounded-xl p-6 md:p-8 border-2 border-tech-purple/20">
+      <div className="flex items-center justify-center gap-2 mb-4">
+        <Sparkles className="text-tech-purple" size={20} />
+        <h3 className="text-lg md:text-xl font-medium">Event Countdown</h3>
+      </div>
       
-      <div className="grid grid-cols-4 gap-2 md:gap-4">
-        {timeBlocks.map((block, index) => (
-          <div key={index} className="flex flex-col items-center">
-            <div className="text-2xl md:text-4xl lg:text-5xl font-bold text-tech-green mb-1 md:mb-2">
-              {String(block.value).padStart(2, '0')}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        {[
+          { label: 'Days', value: timeLeft.days },
+          { label: 'Hours', value: timeLeft.hours },
+          { label: 'Minutes', value: timeLeft.minutes },
+          { label: 'Seconds', value: timeLeft.seconds }
+        ].map((item) => (
+          <div key={item.label} className="flex flex-col items-center">
+            <div className="relative w-full aspect-square bg-tech-dark rounded-lg flex items-center justify-center border border-tech-purple/30 overflow-hidden">
+              <div className="absolute inset-0 bg-tech-gradient opacity-10 animate-pulse-glow"></div>
+              <span className="text-3xl md:text-5xl font-mono font-bold text-tech-purple">
+                {item.value.toString().padStart(2, '0')}
+              </span>
             </div>
-            <div className="text-xs md:text-sm text-white/60">
-              {block.label}
-            </div>
+            <span className="mt-2 text-sm text-foreground/70">{item.label}</span>
           </div>
         ))}
+      </div>
+      
+      <div className="mt-6 flex flex-col md:flex-row items-center justify-center gap-3 pt-4 border-t border-tech-purple/20">
+        <div className="flex items-center gap-2">
+          <Calendar className="text-tech-blue" size={18} />
+          <span className="text-sm">April 4th, 2025</span>
+        </div>
+        <div className="hidden md:block text-foreground/50">|</div>
+        <div className="text-sm text-center">
+          <span className="text-tech-purple">Venue:</span> Room No. 253, C Block
+        </div>
       </div>
     </div>
   );
 };
 
-export default Countdown;
+export default CountdownTimer;
