@@ -60,7 +60,7 @@ const CountdownTimer = () => {
           <div key={item.label} className="flex flex-col items-center">
             <div className="relative w-full aspect-square bg-tech-dark rounded-lg flex items-center justify-center border border-tech-purple/30 overflow-hidden">
               <div className="absolute inset-0 bg-tech-gradient opacity-10 animate-pulse-glow"></div>
-              <span className="text-3xl md:text-5xl font-mono font-bold text-tech-purple">
+              <span className="text-3xl md:text-5xl font-mono font-bold text-tech-green">
                 {item.value.toString().padStart(2, '0')}
               </span>
             </div>
