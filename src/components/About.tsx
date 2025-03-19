@@ -51,7 +51,7 @@ const About = () => {
           <h2 className="section-subtitle">About The Event</h2>
           <h3 className="section-title">What is <span className="text-tech-green">TECH-TREX</span>?</h3>
           <p className="text-white/70 max-w-3xl mx-auto text-lg">
-            TECH-TREX is the flagship technical event of Anaadyanta, hosted by the NMIT ACM Club. This multi-round competition challenges participants to demonstrate their technical knowledge, problem-solving abilities, and teamwork skills.
+            TECH-TREX is the Premier technical event of Anaadyanta, hosted by the NMIT ACM Club. This multi-round competition challenges participants to demonstrate their technical knowledge, problem-solving abilities, and teamwork skills.
           </p>
         </div>
         
