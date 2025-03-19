@@ -1,31 +1,90 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Trophy, Sparkles } from 'lucide-react';
 
 const PrizePool = () => {
   const prizes = [
     { 
       position: '1st', 
-      amount: '₹2,500', 
+      amount: 2500, 
+      displayAmount: 0,
       icon: <Trophy size={38} className="text-yellow-400" />,
       gradient: "from-yellow-400 via-yellow-300 to-yellow-200"
     },
     { 
       position: '2nd', 
-      amount: '₹1,500', 
+      amount: 1500, 
+      displayAmount: 0,
       icon: <Trophy size={32} className="text-gray-300" />,
       gradient: "from-gray-300 via-gray-200 to-gray-100"
     },
     { 
       position: '3rd', 
-      amount: '₹1,000', 
+      amount: 1000, 
+      displayAmount: 0,
       icon: <Trophy size={28} className="text-amber-700" />,
       gradient: "from-amber-700 via-amber-600 to-amber-500"
     },
   ];
 
+  const [animatedPrizes, setAnimatedPrizes] = useState(prizes.map(prize => ({...prize, displayAmount: 0})));
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Observer to start animation when the element is in viewport
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setIsVisible(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.3 });
+
+    const prizeSection = document.getElementById('prize-pool-section');
+    if (prizeSection) {
+      observer.observe(prizeSection);
+    }
+
+    return () => {
+      if (prizeSection) {
+        observer.unobserve(prizeSection);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    // Start the counting animation
+    const duration = 1500; // Animation duration in ms
+    const framesPerSecond = 60;
+    const totalFrames = duration / 1000 * framesPerSecond;
+    let frame = 0;
+
+    const timer = setInterval(() => {
+      frame++;
+      const progress = frame / totalFrames;
+      
+      if (progress >= 1) {
+        setAnimatedPrizes(prizes.map(prize => ({...prize, displayAmount: prize.amount})));
+        clearInterval(timer);
+        return;
+      }
+
+      // Easing function for smoother animation
+      const easeOutQuart = (x) => 1 - Math.pow(1 - x, 4);
+      const easedProgress = easeOutQuart(progress);
+
+      setAnimatedPrizes(prizes.map(prize => ({
+        ...prize,
+        displayAmount: Math.round(easedProgress * prize.amount)
+      })));
+    }, 1000 / framesPerSecond);
+
+    return () => clearInterval(timer);
+  }, [isVisible]);
+
   return (
-    <div className="py-16 bg-gradient-to-b from-charcoal/90 to-charcoal/70">
+    <div id="prize-pool-section" className="py-16 bg-gradient-to-b from-charcoal/90 to-charcoal/70">
       <div className="section-container">
         <div className="text-center mb-12 opacity-0 reveal">
           <h2 className="section-subtitle flex items-center justify-center gap-2">
@@ -37,7 +96,7 @@ const PrizePool = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {prizes.map((prize, index) => (
+          {animatedPrizes.map((prize, index) => (
             <div 
               key={index} 
               className={`relative overflow-hidden rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 opacity-0 reveal`}
@@ -54,7 +113,9 @@ const PrizePool = () => {
                   {prize.icon}
                 </div>
                 <h4 className="text-xl font-bold text-white mb-2">{prize.position} Place</h4>
-                <p className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-tech-green to-tech-green-dark">{prize.amount}</p>
+                <p className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-tech-green to-tech-green-dark">
+                  ₹{prize.displayAmount.toLocaleString()}
+                </p>
               </div>
             </div>
           ))}
