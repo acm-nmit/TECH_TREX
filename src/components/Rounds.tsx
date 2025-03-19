@@ -39,28 +39,27 @@ const Rounds = () => {
     },
     {
       number: "02",
-      title: "Coding Challenge",
+      title: "InvisiSketch",
       icon: <Code size={28} className="text-tech-green" />,
-      description: "Solve algorithmic problems and demonstrate your coding skills under time pressure.",
+      description: "A game where One teammate unleashes their inner Picasso on Skribbl, while the other scrambles to decode the masterpiece within the time limit.",
       rules: [
-        "Same teams from Round 1",
-        "3 progressively difficult problems to solve",
-        "Choice of programming languages: C, C++, Java, Python",
-        "Evaluation based on correctness, efficiency and time taken",
-        "Top teams qualify for the final round"
+        "One participant will be shown a tech-related word and must sketch it on Skribbl without using letters or numbers.",
+        "The second participant must guess the correct image based on the virtual sketch.",
+        "Each team will have a fixed time to complete their turn.",
+        "The number of correct guesses within the time limit will determine qualification for the next round."
       ]
     },
     {
       number: "03",
-      title: "Technical Innovation Challenge",
+      title: "Promptopia",
       icon: <Trophy size={28} className="text-tech-green" />,
-      description: "Design and present a technical solution to a real-world problem.",
+      description: "Teams tackle a given task using only AI-generated prompts—no coding, just smart and strategic prompting!",
       rules: [
-        "Finalists will receive a problem statement",
-        "Design a technical solution with architecture diagram",
-        "10-minute presentation followed by Q&A",
+        "A specific task or problem statement will be given at the start of the round.",
+        "Teams can only use text-based prompts to generate results—no manual coding, editing, or external software manipulation allowed.",
+        "Participants must use the AI tools provided (e.g., ChatGPT, GitHub Copilot, DALL·E, or similar).",
         "Judged by industry professionals",
-        "Winners receive prizes and recognition"
+        "Each round will have a fixed time limit to create and refine their outputs."
       ]
     }
   ];
