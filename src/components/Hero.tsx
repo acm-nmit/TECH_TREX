@@ -60,7 +60,7 @@ const Hero = () => {
           <a href="#rounds" className="btn-primary">
             Explore Rounds
           </a>
-          <a href="#" className="btn-outline flex items-center gap-2">
+          <a href="/ANAADYANTA.pdf" className="btn-outline flex items-center gap-2">
             <FileText size={18} />
             Download Brochure
           </a>
