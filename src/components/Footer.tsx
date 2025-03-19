@@ -79,7 +79,7 @@ const Footer = () => {
         
         <div className="pt-8 border-t border-white/5 text-center">
           <p className="text-white/40 text-sm">
-            © 2023 NMIT ACM Club. All rights reserved.
+            © 2025 NMIT ACM Club. All rights reserved.
           </p>
         </div>
       </div>
