@@ -9,6 +9,7 @@ import PrizePool from '@/components/PrizePool';
 import Coordinators from '@/components/Coordinators';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
+import Timeline from '@/components/Timeline';
 
 const Index = () => {
   useEffect(() => {
@@ -26,6 +27,7 @@ const Index = () => {
         </div>
       </div>
       <About />
+      <Timeline />
       <Rounds />
       <PrizePool />
       <Coordinators />

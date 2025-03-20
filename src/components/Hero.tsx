@@ -1,12 +1,13 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowDown, FileText, UserPlus } from 'lucide-react';
+import { ArrowDown, FileText, UserPlus, Calendar, MapPin } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Hero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+  const infoRef = useRef<HTMLDivElement>(null);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
 
   useEffect(() => {
@@ -14,6 +15,7 @@ const Hero = () => {
     const title = titleRef.current;
     const subtitle = subtitleRef.current;
     const cta = ctaRef.current;
+    const info = infoRef.current;
 
     if (title) title.classList.add('animate-fade-in-up');
     
@@ -24,6 +26,10 @@ const Hero = () => {
     setTimeout(() => {
       if (cta) cta.classList.add('animate-fade-in-up');
     }, 600);
+    
+    setTimeout(() => {
+      if (info) info.classList.add('animate-fade-in-up');
+    }, 900);
 
   }, []);
 
@@ -79,6 +85,28 @@ const Hero = () => {
             <FileText size={18} />
             Download Brochure
           </a>
+        </div>
+        
+        <div className="mt-12 px-4 py-6 glass-card opacity-0 hover-scale max-w-2xl mx-auto" ref={infoRef}>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+            <div className="flex items-center gap-3">
+              <Calendar className="text-tech-green" size={24} />
+              <div className="text-left">
+                <p className="text-xs text-tech-green font-semibold uppercase">Event Date</p>
+                <p className="text-xl font-bold">April 4th, 2025</p>
+              </div>
+            </div>
+            
+            <div className="hidden md:block h-12 w-px bg-white/10"></div>
+            
+            <div className="flex items-center gap-3">
+              <MapPin className="text-tech-green" size={24} />
+              <div className="text-left">
+                <p className="text-xs text-tech-green font-semibold uppercase">Venue</p>
+                <p className="text-xl font-bold">Room No. 253, C Block</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       

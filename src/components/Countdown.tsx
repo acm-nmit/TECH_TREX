@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Clock, Calendar, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 interface TimeLeft {
   days: number;
@@ -67,17 +67,6 @@ const CountdownTimer = () => {
             <span className="mt-2 text-sm text-foreground/70">{item.label}</span>
           </div>
         ))}
-      </div>
-      
-      <div className="mt-6 flex flex-col md:flex-row items-center justify-center gap-3 pt-4 border-t border-tech-purple/20">
-        <div className="flex items-center gap-2">
-          <Calendar className="text-tech-blue" size={18} />
-          <span className="text-sm">April 4th, 2025</span>
-        </div>
-        <div className="hidden md:block text-foreground/50">|</div>
-        <div className="text-sm text-center">
-          <span className="text-tech-purple">Venue:</span> Room No. 253, C Block
-        </div>
       </div>
     </div>
   );
