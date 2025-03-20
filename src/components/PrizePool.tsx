@@ -146,7 +146,8 @@ const PrizePool = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>
+        {`
         @keyframes float-slow {
           0%, 100% { transform: translateY(0) translateX(0); }
           50% { transform: translateY(-15px) translateX(5px); }
@@ -168,7 +169,8 @@ const PrizePool = () => {
         .animate-float-fast {
           animation: float-fast 4s ease-in-out infinite;
         }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };
