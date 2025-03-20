@@ -26,7 +26,7 @@ const FAQ = () => {
     },
     {
       question: "What should I bring on the day of the event?",
-      answer: "Participants should bring their college ID, a laptop with necessary software installed, and any specific requirements that will be communicated before the event."
+      answer: "Participants should bring their college ID, a laptop(Optional) and any specific requirements that will be communicated before the event."
     }
   ];
 
