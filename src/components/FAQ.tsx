@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Accordion, 
@@ -32,7 +31,7 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="py-16 bg-charcoal">
+    <div id="faq" className="py-16 bg-charcoal">
       <div className="section-container">
         <div className="text-center mb-12 opacity-0 reveal">
           <h2 className="section-subtitle">Questions</h2>
