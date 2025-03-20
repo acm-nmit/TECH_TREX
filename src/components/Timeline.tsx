@@ -28,14 +28,14 @@ const Timeline = () => {
     {
       icon: <Calendar className="text-tech-green" size={24} />,
       title: "Registration Opens",
-      date: "March 1, 2025",
+      date: "March 20, 2025",
       time: "09:00 AM",
       description: "Registration opens for all participants. Form your teams of 2-3 members."
     },
     {
       icon: <Flag className="text-tech-green" size={24} />,
       title: "Registration Deadline",
-      date: "March 30, 2025",
+      date: "March 28, 2025",
       time: "11:59 PM",
       description: "Last date to register for the event. No late registrations will be accepted."
     },
@@ -43,28 +43,28 @@ const Timeline = () => {
       icon: <Clock className="text-tech-green" size={24} />,
       title: "Round 1: Dot-Dash Decipher",
       date: "April 4, 2025",
-      time: "10:00 AM - 11:30 AM",
+      time: "11:00 AM - 11:45 AM",
       description: "Teams race against time to decode hidden messages."
     },
     {
       icon: <Clock className="text-tech-green" size={24} />,
       title: "Round 2: InvisiSketch",
       date: "April 4, 2025",
-      time: "01:00 PM - 02:30 PM",
+      time: "12:30 PM - 01:30 PM",
       description: "One teammate sketches, the other guesses within time limits."
     },
     {
       icon: <Clock className="text-tech-green" size={24} />,
       title: "Round 3: Promptopia",
       date: "April 4, 2025",
-      time: "03:30 PM - 05:00 PM",
+      time: "02:00 PM - 03:30 PM",
       description: "Teams use AI-generated prompts to solve given tasks."
     },
     {
       icon: <Trophy className="text-tech-green" size={24} />,
       title: "Results & Prize Distribution",
       date: "April 4, 2025",
-      time: "06:00 PM",
+      time: "3:45 PM",
       description: "Winners announcement and prize distribution ceremony."
     }
   ];
