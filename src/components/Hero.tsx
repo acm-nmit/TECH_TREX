@@ -1,11 +1,13 @@
 
-import React, { useEffect, useRef } from 'react';
-import { ArrowDown, FileText } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { ArrowDown, FileText, UserPlus } from 'lucide-react';
+import { Button } from './ui/button';
 
 const Hero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+  const [showRegisterModal, setShowRegisterModal] = useState(false);
 
   useEffect(() => {
     // Staggered animation on mount
@@ -24,6 +26,12 @@ const Hero = () => {
     }, 600);
 
   }, []);
+
+  const handleRegister = () => {
+    // Here you would typically integrate with your registration system
+    // For now, we'll just show an alert
+    window.open("https://forms.gle/APCWYvZvW8MFZ9fc6", "_blank");
+  };
 
   return (
     <section 
@@ -57,6 +65,13 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0" ref={ctaRef}>
+          <Button 
+            onClick={handleRegister}
+            className="bg-tech-green hover:bg-tech-green/90 text-black font-semibold flex items-center gap-2 px-6 py-6 text-base rounded-lg shadow-lg shadow-tech-green/20 transition-all duration-300 transform hover:scale-105"
+          >
+            <UserPlus size={20} />
+            Register Now
+          </Button>
           <a href="#rounds" className="btn-primary">
             Explore Rounds
           </a>
