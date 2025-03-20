@@ -30,7 +30,7 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">About</h3>
             <p className="text-white/60">
-              TECH-TREX is a premier technical event organized by the NMIT ACM Club as part of Anaadyanta, challenging participants through multiple rounds of technical competitions.
+              TECH-TREX is a premier technical event organized by the NMIT ACM Student Chapter as part of Anaadyanta, challenging participants through multiple rounds of technical competitions.
             </p>
           </div>
           
@@ -79,7 +79,7 @@ const Footer = () => {
         
         <div className="pt-8 border-t border-white/5 text-center">
           <p className="text-white/40 text-sm">
-            © 2025 NMIT ACM Club. All rights reserved.
+            © 2025 NMIT ACM Student Chapter. All rights reserved.
           </p>
         </div>
       </div>
