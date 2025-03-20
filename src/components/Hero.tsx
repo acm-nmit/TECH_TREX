@@ -103,7 +103,7 @@ const Hero = () => {
               <MapPin className="text-tech-green" size={24} />
               <div className="text-left">
                 <p className="text-xs text-tech-green font-semibold uppercase">Venue</p>
-                <p className="text-xl font-bold">Room No. 253, C Block</p>
+                <p className="text-xl font-bold">Room No. 413, D Block</p>
               </div>
             </div>
           </div>
