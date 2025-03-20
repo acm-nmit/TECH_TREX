@@ -55,7 +55,7 @@ const Hero = () => {
 
       <div className="relative z-10 text-center px-6 max-w-5xl opacity-0" ref={titleRef}>
         <span className="inline-block text-sm md:text-base font-medium uppercase tracking-widest text-tech-green mb-4 py-1 px-3 border border-tech-green/20 rounded-full">
-          NMIT ACM Club Presents
+          NMIT ACM Student Chapter Presents
         </span>
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-tight">
           TECH<span className="text-tech-green">-TREX</span>
