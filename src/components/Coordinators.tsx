@@ -17,7 +17,7 @@ const Coordinators = () => {
   ];
 
   return (
-    <div className="py-16 bg-charcoal/50">
+    <div id="contact" className="py-16 bg-charcoal/50">
       <div className="section-container">
         <div className="text-center mb-12 opacity-0 reveal">
           <h2 className="section-subtitle">Contact</h2>
