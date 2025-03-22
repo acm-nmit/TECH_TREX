@@ -71,21 +71,22 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0" ref={ctaRef}>
-          <Button 
-            onClick={handleRegister}
-            className="bg-tech-green hover:bg-tech-green/90 text-black font-semibold flex items-center gap-2 px-6 py-6 text-base rounded-lg shadow-lg shadow-tech-green/20 transition-all duration-300 transform hover:scale-105"
-          >
-            <UserPlus size={20} />
-            Register Now
-          </Button>
-          <a href="#rounds" className="btn-primary">
-            Explore Rounds
-          </a>
-          <a href="/ANAADYANTA.pdf" className="btn-outline flex items-center gap-2">
-            <FileText size={18} />
-            Download Brochure
-          </a>
-        </div>
+  <Button 
+    onClick={() => window.location.href = "https://unstop.com/hackathons/tech-trex-geekmayhem-2025-nitte-meenakshi-institute-of-technology-nmit-yelahanka-1437244"}
+    className="bg-tech-green hover:bg-tech-green/90 text-black font-semibold flex items-center gap-2 px-6 py-6 text-base rounded-lg shadow-lg shadow-tech-green/20 transition-all duration-300 transform hover:scale-105"
+  >
+    <UserPlus size={20} />
+    Register Now
+  </Button>
+  <a href="#rounds" className="btn-primary">
+    Explore Rounds
+  </a>
+  <a href="/ANAADYANTA.pdf" className="btn-outline flex items-center gap-2">
+    <FileText size={18} />
+    Download Brochure
+  </a>
+</div>
+
         
         <div className="mt-12 px-4 py-6 glass-card opacity-0 hover-scale max-w-2xl mx-auto" ref={infoRef}>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
