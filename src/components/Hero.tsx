@@ -76,9 +76,7 @@ const Hero = () => {
             className="bg-tech-green hover:bg-tech-green/90 text-black font-semibold flex items-center gap-2 px-6 py-6 text-base rounded-lg shadow-lg shadow-tech-green/20 transition-all duration-300 transform hover:scale-105"
           >
             <UserPlus size={20} />
-             <a href="https://unstop.com/hackathons/tech-trex-geekmayhem-2025-nitte-meenakshi-institute-of-technology-nmit-yelahanka-1437244" className="btn-primary">
             Register Now
-             </a>
           </Button>
           <a href="#rounds" className="btn-primary">
             Explore Rounds
