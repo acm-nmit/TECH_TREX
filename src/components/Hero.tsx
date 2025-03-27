@@ -72,7 +72,7 @@ const Hero = () => {
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0" ref={ctaRef}>
   <Button 
-    onClick={() => window.location.href = "https://unstop.com/hackathons/tech-trex-geekmayhem-2025-nitte-meenakshi-institute-of-technology-nmit-yelahanka-1437244"}
+    onClick={() => window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSfUoxSO0zCTbWVPqbgLZKmYDJ8vTHJg4ZB-cky7Mcirz87P5A/viewform"}
     className="bg-tech-green hover:bg-tech-green/90 text-black font-semibold flex items-center gap-2 px-6 py-6 text-base rounded-lg shadow-lg shadow-tech-green/20 transition-all duration-300 transform hover:scale-105"
   >
     <UserPlus size={20} />
