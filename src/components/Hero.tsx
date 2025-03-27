@@ -36,7 +36,7 @@ const Hero = () => {
   const handleRegister = () => {
     // Here you would typically integrate with your registration system
     // For now, we'll just show an alert
-    window.open("https://forms.gle/APCWYvZvW8MFZ9fc6", "_blank");
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSfUoxSO0zCTbWVPqbgLZKmYDJ8vTHJg4ZB-cky7Mcirz87P5A/viewform?usp=dialog", "_blank");
   };
 
   return (
