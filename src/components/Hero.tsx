@@ -81,7 +81,7 @@ const Hero = () => {
   <a href="#rounds" className="btn-primary">
     Explore Rounds
   </a>
-  <a href="/ANAADYANTA.pdf" className="btn-outline flex items-center gap-2">
+  <a href="/Tech-Trex.pdf" className="btn-outline flex items-center gap-2">
     <FileText size={18} />
     Download Brochure
   </a>
